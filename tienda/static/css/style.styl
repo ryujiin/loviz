@@ -1,0 +1,934 @@
+rojito = #f55c59
+linkhover = #717171
+aguamarina = #88c7c5
+colortexto = #777
+plomo_oscu = #444
+
+body
+	background url('img/bg_boxed.jpg') no-repeat fixed top center
+	color #666666
+	font-size 16px
+	font-family arial
+	a
+		color #909090
+		&:hover
+			color rojito
+			text-decoration none
+	img
+		width 100%
+	.enlinea
+		display inline-block
+	.logo
+		width 235px
+		margin 0 auto
+		padding 20px 0
+	.menu
+		padding 0
+		margin 0
+		li
+			list-style none
+	.oculto
+		display none
+	.right
+		float right
+	table
+		width 100%
+	.wrapper
+		background #fff
+#carro
+	table.productos-bolsa
+		border 6px solid #f3f3f3
+		thead
+			tr
+				background-color #f3f3f3
+				color #777
+				font-size 0.9em
+				th
+					padding 10px
+		tfoot
+			tr
+				background-color #f3f3f3
+				text-align right
+				td
+					padding 5px
+			#orderTotal
+				background-color #d9eefa
+		.img
+			width 20%
+#contenido
+	padding-bottom 10px
+#checkout
+	.panel
+		.step-titulo
+			background-color #dedede
+			color #909090
+			padding 5px
+			h3
+				display inline-block
+				margin 0
+				font-size 1.3em
+				span
+					width 24px
+					display inline-block
+					margin 1px 5px
+					background-color #fff
+					text-align center
+					border-radius 20px
+			&.activo
+				background-color rojito
+				h3
+					color #fff
+					span
+						color #909090
+header
+	.logo
+		strong
+			font-size 0
+			position absolute
+	.main-header
+		border-top 1px dotted #d9d9d9
+		.buscador-minicart
+			padding 30px 0 0 0
+			.buscador
+				padding 20px
+				margin-left: 60px;
+				.content-buscador
+					background-color #ededed
+					border-radius 5px
+					input
+						border none
+						background transparent
+						margin 5px 
+						width 300px
+						&:focus
+							outline none
+					.glyphicon
+						background rojito
+						color #fff
+						border-radius 5px
+						padding 8px
+			.minicart
+				padding 0 50px
+				margin 20px
+				position relative
+				.icono-cart
+					width 50px
+					height 50px
+					position absolute					
+					left 0px
+					.glyphicon
+						font-size 40px
+						color #999
+					.cantidad
+						position absolute
+						bottom 0
+						left 18px
+						display block
+						width 30px
+						line-height 25px
+						text-align center
+						background-color rojito
+						color #fff
+						font-weight bold
+						border-radius 20px
+						border 2px solid #fff
+				.body-cart
+					.title-cart
+						h2
+							font-size 0.9em
+							margin 6px
+					.detail-cart
+						font-size 0.8em
+	.top-link
+		border-bottom 1px dotted #D9D9D9
+		margin-bottom 1px
+		padding-top 10px
+		padding-bottom 10px
+		li
+			margin 0 10px
+		p
+			margin 0
+nav#main-menu
+	padding 0 0 15px 0
+	.content-menu
+		background-color #000
+		box-shadow 0px 5px 7px
+	.menu-login
+		background-color rojito
+		position relative
+		a
+			color #fff
+		&:after
+			content ''
+			display block
+			position absolute
+			background-color rojito
+			width 192px
+			height 8px
+			top -8px
+		&:before
+			content ''
+			display block
+			position absolute
+			height 19px
+			width 20px
+			top -19px
+			left -10px
+			border-left: 10px solid transparent
+			border-right: 10px solid transparent
+			border-bottom: 8px solid #8A0808
+	.menu
+		li
+			display inline-block
+			a
+				padding 20px 17px
+				display block
+.producto
+	.image-box
+		position relative
+		.new-producto
+			position: absolute;
+			top: 0px;
+			display: block;
+			width: 60px;
+			background: #FF8000;
+			line-height: 50px;
+			border-radius: 30px;
+			padding: 5px;
+			color: #fff;
+			font-weight: bold;		
+	.producto-info
+		text-align center
+		.product-title
+			a
+				color #666
+		.product-review
+			font-size 0.8em
+			.estrellitas
+				display inline-block
+				.glyphicon
+					color #FFBF00
+		.price-box
+			.price
+				color rojito
+				font-size 1.5em
+				margin 0 10px
+			.old-price
+				text-decoration line-through
+#newsletter
+	background-color #efefef
+	padding 30px 50px 30px 44px
+	.titulo-newsletter
+		h2
+			font-size 1.4em
+			margin 0
+	p
+		font-size 0.8em
+footer
+	background url('img/bg-big-footer.png') no-repeat top center #1b1b1b
+h2,nav#main-menu .menu li a
+	text-transform uppercase
+	font-weight 500
+.body-cart .title-cart,
+nav#main-menu .menu li a,
+h2,h3,h4,
+.producto .product-title a,
+.producto .price-box
+	font-family: 'Roboto Condensed', sans-serif;
+#producto
+	.colores
+		text-align center
+		.varia_color
+			width 100px
+			display inline-block
+	.formu
+		background-color: #fff;
+		text-align: center;
+		padding-top: 50px;
+		right: -20px;
+		top: 50px;
+		border: 1px solid #ddd;
+		box-shadow: 1px 1px 10px;
+		.price-box
+			.antiguo
+				color #777
+				em
+					text-decoration line-through
+			.actual
+				font-family 'Georgia', serif
+				color #8a9c10
+				font-weight bold
+				font-size 2.2em
+			.stock-viability
+				color #8a9c10
+		.formulario-producto
+			select
+				margin 10px auto
+	.titulo-producto
+		font-size 1.5em
+		text-align center
+	.info-producto
+		.descrpcion
+			font-size 0.8em
+			h3
+				color #76860A;
+				font italic 20px 'Georgia',serif;
+				margin-bottom 20px;
+			li
+				list-style square
+	h3.subtitulo
+		display: inline-block;
+		margin: 0 0 0 -15px;
+		background: #2c5987;
+		line-height: 35px;
+		color: #fff;
+		padding: 0 5px;
+		font-size 1.2em
+		position relative
+	.relacionados
+		h3
+			font-family Georgia,serif
+			font-size 1em
+			font-style italic
+	.thumns
+		padding 50px 10px
+/*
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?gaz8vq');
+	src:url('fonts/icomoon.eot?#iefixgaz8vq') format('embedded-opentype'),
+		url('fonts/icomoon.woff?gaz8vq') format('woff'),
+		url('fonts/icomoon.ttf?gaz8vq') format('truetype'),
+		url('fonts/icomoon.svg?gaz8vq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body
+	font-family arial,sans-serif
+	font-size 16px
+	color colortexto
+	min-width 420px
+	a
+		color rojito
+		text-decoration none
+		&:hover
+			color plomo_oscu
+			text-decoration none
+	button
+		border none
+	.contenedor
+		padding 0 15px
+	.caja_advertencia
+		border-color: red;
+		box-shadow: 0px 0px 10px #FE2E64;
+	.enlinea
+		display inline-block
+	img
+		width 100%
+	.left
+		float left
+	.logo
+		width 235px
+		margin 0 auto
+		padding 20px 0
+	li
+		font-size 0.8em
+		list-style square
+	.marco
+		width 420px
+		margin 0 auto
+	.menu
+		list-style none
+		padding 0
+		margin 0
+		li
+			list-style none
+		&.menu-inline
+			li
+				display inline-block
+	.modal
+		.acciones
+			text-align center
+			.btn
+				margin 0 20px
+		.modal-content
+			padding 10px
+		.modal-title
+			text-align center
+			font italic 19px Georgia, "Times New Roman", serif
+			color #646e23
+		.modal-body
+			padding 5px
+			font-size 0.8em
+			p
+				margin 0
+	.oculto
+		display none
+	p
+		font-size 0.8em
+	.tituloweb
+		font-size 2em
+		line-height 1.8em
+		font-weight 200
+	.separador
+		border-bottom 1px dotted #D9D9D9
+		border-top 1px dotted #D9D9D9
+		height 3px
+	.right
+		float right
+	select
+		border 1px solid #D3D3D3
+		color #777777
+		padding 9px
+		background-color #fff
+		font-size 16px
+#body
+	#content
+		.banner_tool
+			margin-top 15px
+			p
+				background-color #f3f3f3
+				margin 15px 0
+				padding 10px
+				font-size 0.7em
+	#checkout
+		.tituloweb
+			font-size 1.5em
+		.form_caja
+			.pagar
+				.metodo-pago
+					cursor pointer
+			.paneles
+				margin-bottom 15px
+				h3
+					font-size 1.5em
+					font-weight 300
+					span
+						background-color rojito
+						text-align center
+						width 30px
+						display inline-block
+						color #fff
+						height 30px
+				.content-panel
+					border-top 1px solid #D9D9D9
+					padding 10px 30px
+					label
+						color #767676
+						text-align left
+						font-weight normal
+						margin 0
+						font-size 0.8em
+					select
+						width 90%
+						padding 9px
+			
+				
+	#producto-single
+		.descripcion
+			h3
+				font italic 20px Georgia,serif
+				text-transform none
+				color #76860A
+		.pname
+			font-size 1.2em
+			font-weight 200
+			strong
+				font-weight 400
+		.productoFeedback
+			margin 10px 0
+			background-color #fff
+			padding 10px
+			h4
+				font-family arial
+				text-transform none
+				font-size 1em
+				padding 0 10px
+				strong
+					color rojito
+			.btn
+				margin 0 auto
+				display block
+				color #224573
+				text-transform uppercase
+				font bold 12px Verdana,sans-serif
+		.ranting
+			font-size 0.9em
+			.estrellas
+				color #FACC2E
+		.relacionados
+			h3
+				font italic 16px Georgia,serif
+				text-transform none
+		.p_colores
+			figure
+				width 100px
+				display inline-block
+				padding 10px 0
+		.p_informacion
+			.price-box
+				text-align left
+				.actual
+					font-size 2em
+					font-weight 200	
+				.stock-viability
+					margin-top 10px
+					font-family arial
+					display inline-block
+					text-transform none
+					padding 0 20px
+		.todo_producto
+			.formulario
+				border-top 1px solid #fff
+				padding 5px
+				select
+					display block
+					margin 10px auto
+					width 250px
+				p
+					button.btn-success
+						width 250px
+						margin 0 auto
+						display block	
+				.acciones
+					width 250px
+					margin 0 auto 10px
+					.btn
+						width 48%
+	#mi-bolsa
+		.tituloweb
+			text-align center
+			font-weight normal
+			font-size 1.6em
+			color #444
+		.procesar
+			background-color rojito
+			color #fff
+			padding 10px
+			margin 10px auto
+			display block
+			&:hover
+				background-color plomo_oscu
+		.productos-bolsa
+			.linea
+				border-bottom 1px solid #E4E4E4
+				padding 10px 0
+				.name
+					a
+						color plomo_oscu
+						font-weight 200
+						font-size 0.6em
+				.precio
+					color rojito
+					font-family 'Yanone Kaffeesatz',sans-serif
+					font-size 1.1em
+					font-weight 200
+				.cantidad
+					background-color #f5f5f5
+					padding 5px
+					label
+						color #605d5d
+						font-family arial
+						font-size 11px
+						font-weight normal
+						margin 0 10px
+		.total_bolsa
+			width 390px
+			margin 10px 0
+			.borde-total
+				border 8px solid #f3f3f3
+				border-top none
+			h3
+				background-color rojito
+				text-align center
+				color #fff
+				padding 10px 0
+			.proceces_checkout
+				overflow hidden
+				background-color #f3f3f3
+				p
+					text-align center
+			.total_content
+				.secc
+					div
+						display inline-block
+						text-align right
+						width 30%
+						font-size 0.8em
+					.etiq
+						width 60%
+					.cifra						
+						margin-right 5px				
+						color rojito
+h1,h2,h3,h4,h5
+	margin 0
+header
+	.logo
+		strong
+			font-size 0
+			position absolute
+	.mini-cart
+		width 200px
+		background-color #f2f2f2
+		margin 0 auto 25px
+		position relative
+		padding 10px 2px 13px 50px
+		cursor pointer
+		.checkout
+			background-color rojito
+			color #fff
+			padding 2px 10px
+			border-radius 20px
+			width 100px
+			text-transform uppercase
+			font-size 12px
+			position absolute 
+			font-family arial
+			text-align center
+			bottom -10px
+			right 25px
+			a
+				color #fff
+			&:hover
+				background-color #444
+		.carrito_content
+			padding 20px
+			background-color #444
+			color #fff
+			width 300px
+			margin 0 auto
+			position absolute
+			right -50px
+			display none
+			.acciones
+				border-top 1px solid #575757
+				padding 10px
+				a
+					color #bbb
+					font-size 0.8em
+					&:hover
+						text-decoration underline
+				button
+					background-color rojito
+					border none
+					font-family 'Yanone Kaffeesatz',arial
+					font-size 1em
+					text-transform uppercase
+					padding 5px 10px
+					float right
+					&:hover
+						background-color aguamarina
+			.lineas-carrito
+				.linea
+					font-size 12px
+					.badge
+						background-color rojito
+						margin 5px
+		.icon-cart
+			background-color aguamarina
+			width 40px
+			border-radius 20px
+			height 40px
+			display block
+			position absolute
+			top 10px
+			left 5px
+			color #fff
+			padding-top 4px
+			text-align center
+			&:before
+				vertical-align middle
+		.items
+			color #999
+			font-size 14px
+			.price
+				color rojito				
+		.titulo-cart
+			text-transform uppercase
+			font-size 18px
+	.top-link
+		color linkhover
+		font-size 0.8em
+		background-color #f3f3f3
+		border-bottom 1px solid #d7d7d7
+		text-align center
+		padding 10px 0
+		text-transform uppercase
+		a
+			text-transform uppercase
+			color linkhover
+			&:hover
+				color rojito
+		.telefono
+			strong
+				color rojito
+		ul
+			.glyphicon
+				font-size 10px
+		p
+			font-size 1em
+nav.breadcrumbs
+	padding 5px 0
+	ul
+		li
+			display inline
+			font-size 0.7em
+			color #aaa
+			a
+				color #aaa
+			span
+				margin 0 5px
+nav#main-nav
+	padding 10px 0
+	.main-buscador
+		border 1px solid #ddd
+		border-radius 30px
+		width 75%
+		margin-top 6px
+		padding 2px 6px		
+		input
+			border none
+			width 90%
+			&:focus
+				outline:0px
+		span.icono
+			font-size 18px
+			vertical-align middle
+			border-left 1px solid #d9d9d9
+			padding 0 0 0 6px
+			cursor pointer
+	.menu
+		margin-top 10px
+		display none
+		li
+			background-color #faf8f8
+			cursor pointer
+			a
+				border-bottom 1px solid #e0d8d8
+				font-size 1.2em
+				font-weight 400
+				color #666
+				text-transform uppercase
+				display block
+				margin 0 15px
+				line-height 40px
+				&:hover
+					color rojito
+	.mobil-menu
+		background-color plomo_oscu
+		vertical-align middle
+		font-size 35px
+		color #fff
+		cursor pointer
+		span
+			vertical-align middle
+			text-align center
+			width 45px
+			height 43px
+			display table-cell
+footer#footer
+	.footerblock
+		background url('img/footer-block.png') center bottom no-repeat #fff
+		.block
+			padding-bottom 15px
+			.block-content
+				padding-top 20px
+			h3
+				color plomo_oscu
+				padding-bottom 10px
+	.footer
+		background-color aguamarina
+		background-image url('img/footer.png')
+		background-position center bottom
+		background-repeat no-repeat
+		padding 35px 0 10px
+		.colum-footer
+			padding-bottom 5px
+			position relative
+			h3
+				color #fff
+				line-height 1.5em
+				font-size 1.2em
+				font-weight normal
+				padding 0 10px
+				background-color rgba(0,0,0,0.1)
+			.movil-marker
+				background-color colortexto
+				color #fff
+				padding 5px
+				font-size 10px
+				position absolute
+				right 5px
+				top 5px
+				cursor pointer
+.productos
+	.producto
+		width 200px
+		display inline-block
+		.producto-name
+			text-align center
+			font-size 1.2em
+			a
+				color plomo_oscu
+				font-weight 300
+				&:hover
+					color rojito
+.price-box
+	text-align center
+	.actual
+		color rojito
+		display inline-block
+	.antiguo
+		color linkhover
+		text-decoration line-through
+		font-size 1em
+		display inline-block
+#promos
+	.promo
+		a
+			color rojito
+			text-transform uppercase
+		h2
+			color plomo_oscu
+			font-size 2em
+			line-height 1.3em
+			font-weight 200
+			margin 0 0 5px
+			strong
+				font-weight 400
+	
+
+//Fuentes
+#promos .promo h2,
+#promos .promo a,
+h1,h2,h3,h4,
+#footer .info-brand a,
+#main-nav .menu a,
+.mini-cart .titulo-cart,
+.price-box,
+.procesar
+	font-family 'Yanone Kaffeesatz', sans-serif
+	text-transform uppercase
+
+//iconos
+.icon-search:before {
+	content: "\e610";
+}
+.icon-list:before {
+	content: "\e601";
+}
+.icon-arrow-left:before {
+	content: "\e602";
+}
+.icon-arrow-down:before {
+	content: "\e603";
+}
+.icon-arrow-up:before {
+	content: "\e604";
+}
+.icon-arrow-right:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
+}
+.icon-facebook:before {
+	content: "\e607";
+}
+.icon-googleplus:before {
+	content: "\e608";
+}
+.icon-pinterest:before {
+	content: "\e609";
+}
+.icon-instagram:before {
+	content: "\e60a";
+}
+.icon-pencil:before {
+	content: "\e600";
+}
+.icon-pen:before {
+	content: "\e60c";
+}
+.icon-cart:before {
+	content: "\e60b";
+}
+.icon-phone:before {
+	content: "\e611";
+}
+.icon-notebook:before {
+	content: "\e60d";
+}
+.icon-envelope:before {
+	content: "\e60e";
+}
+.icon-location:before {
+	content: "\e60f";
+}
+.icon-bubbles:before {
+	content: "\e612";
+}
+.icon-bubble:before {
+	content: "\e613";
+}
+.icon-bubbles2:before {
+	content: "\e614";
+}
+.icon-bubbles3:before {
+	content: "\e615";
+}
+.icon-key:before {
+	content: "\e616";
+}
+.icon-star:before {
+	content: "\e617";
+}
+.icon-star2:before {
+	content: "\e618";
+}
+.icon-star3:before {
+	content: "\e619";
+}
+.icon-heart:before {
+	content: "\e61a";
+}
+.icon-heart2:before {
+	content: "\e61b";
+}
+.icon-mail:before {
+	content: "\e61c";
+}
+.icon-googleplus2:before {
+	content: "\e61d";
+}
+.icon-googleplus3:before {
+	content: "\e61e";
+}
+.icon-facebook2:before {
+	content: "\e61f";
+}
+.icon-instagram2:before {
+	content: "\e620";
+}
+.icon-twitter2:before {
+	content: "\e621";
+}
+.icon-twitter3:before {
+	content: "\e622";
+}
+.icon-pinterest2:before {
+	content: "\e623";
+}
+*/

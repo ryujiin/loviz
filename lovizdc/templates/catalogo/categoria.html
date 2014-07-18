@@ -1,0 +1,51 @@
+{%extends 'layout2.html'%}
+
+{%block titulo_pag%}{{categoria}} :: {{titulo_web}} {%endblock%}
+
+{%block contenido%}
+	<section id="content" class="categoria">
+		{%include 'catalogo/partes/bread.html'%}
+		<h1 class="tituloweb">{{categoria.nombre}}</h1>
+		<div class="separador"></div>
+		<div class="banner_tool">
+			<div class="banner_top">
+				{%if categoria.imagen %}
+				<img src="{{categoria.imagen.url }}" alt="">
+				{%endif%}
+			</div>
+			<p class="descripcion">
+				{{categoria.descripcion}}
+			</p>
+			<div class="toolbar sorter"></div>
+		</div>
+		<div class="separador"></div>	
+		<div class="productos">
+			{%for producto in productos%}
+			<article class="producto">
+				<figure>
+					{%for img in producto.get_imagenes%}
+						{%if forloop.first%}
+						<a href="{{producto.get_absolute_url}}">
+							<img src="{{img.foto.url}}" alt="">
+						</a>							
+						{%endif%}
+					{%endfor%}
+				</figure>
+				<h2 class="producto-name">			
+					<a href="{{producto.get_absolute_url}}">{{producto.nombre_mostrar}}</a>
+				</h2>
+				<div class="price-box">
+					{%for precio in producto.get_variacion_precio%}
+						{%if forloop.first%}
+							{%if precio.oferta%}
+								<div class="antiguo">S/.{{precio.en_oferta|floatformat:2}}</div>
+							{%endif%}
+							<div class="actual">S/.{{precio.precio_minorista|floatformat:2}}</div>
+						{%endif%}
+					{%endfor%}
+				</div>
+			</article>
+			{%endfor%}
+		</div>
+	</section>
+{%endblock%}

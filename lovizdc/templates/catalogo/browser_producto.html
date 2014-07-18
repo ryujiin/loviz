@@ -1,0 +1,68 @@
+{%extends 'layout.html'%}
+{% load thumbnail %}
+
+{%block titulo_pag%}{{titulo_web}} - {{titulo_tagline}} {%endblock%}
+
+{% block breadcrumbs %}
+	<ul class="breadcrumb menu">
+		<li><a href="/">Inicio</a> / </li>
+		{%if catepadre%}
+		<li><a href="{{catepadre.obt_url}}">{{catepadre}}</a> / </li> 
+		{%endif%}
+		<li><a href="{{categoria.obt_url}}">{{categoria}}</a></li>
+	</ul>
+{% endblock %}
+
+{%block titulo_principal%}{{categoria}}{%endblock%}
+
+{% block content%}
+	<div class="descripcion_categoria">
+		{%if datoscate.imagen%}
+			<a href="{{categoria.obt_url}}">
+				<img src="{{datoscate.imagen.url}}" alt="{{categoria}}">
+			</a>
+		{%endif%}
+		{%if datoscate.descripcion%}
+			<p>{{datoscate.descripcion}}</p>
+		{%endif%}
+	</div>
+	<ul class="toolbar">
+		<div class="sorter">
+			<div class="sort_by">
+				<label>Buscar por:</label>
+				<select name="" id="">
+					<option value="nuevos">Fecha</option>
+					<option value="">Precio</option>
+					<option value="">Mas vendidos</option>
+					<option value="">Mas valorados</option>
+				</select>
+			</div>
+		</div>
+	</ul>
+	<div class="list_producto grid">
+	</div>
+{% verbatim %}
+<script type='text/template' id='lista_producto_template'>
+	<div class="producto_img">
+		<a href="#">
+			{%for imagens in imagenes_producto%}
+			{% if loop.first %}
+				<img src="{{imagens.imagen}}" alt="{{nombre}}">
+			{%endif%}
+			{%endfor%}
+		</a>
+	</div>
+		<h2 class="producto_name">
+			<a href="#">{{nombre}}</a>
+		</h2>
+		<div class="precio">					
+			<span class="precio_regular">
+				{%if moneda == 'PEN'%}S/.{%endif%}
+				{{precio_menor}}
+			</span>
+		</div>
+	</article>
+</script>
+{% endverbatim %}
+{%endblock%}
+

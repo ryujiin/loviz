@@ -1,0 +1,155 @@
+{%extends 'layout2.html'%}
+
+{%block titulo_pag%}{{producto.nombre_mostrar}} :: Tienda Oficial LovizDC {%endblock%}
+
+{%block contenido%}
+	<section id="producto-single">
+		<div class="imagenes">			
+			{% for img in  producto.get_imagenes%}
+				{% if forloop.first %}
+					<img src="{{img.foto.url}}" alt="">				
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="p_colores">				
+				<figure class="varia_color">
+					<img src="{{producto.get_imagen.foto.url}}" alt="">
+				</figure>
+			{%for p in producto.parientes.all%}
+				<figure class="varia_color">
+					<a href="{{p.get_absolute_url}}">
+						<img src="{{p.get_imagen.foto.url}}" alt="">						
+					</a>
+				</figure>
+			{%endfor%}	
+		</div>
+		<div class="p_informacion contenedor">
+			<h2 class="pname"><strong>{{producto.marca}}</strong>, {{producto.nombre}}</h2>
+			<div class="ranting">
+				<span class="estrellas">
+					<span class="icono icon-star"></span>
+					<span class="icono icon-star"></span>
+					<span class="icono icon-star"></span>
+					<span class="icono icon-star"></span>
+					<span class="icono icon-star"></span>					
+				</span>
+				Basado en <strong>0</strong>
+				<a href="#">Comentarios</a>
+			</div>
+			<div class="price-box">
+				{%for precio in producto.get_variacion_precio%}
+					{%if forloop.first%}
+						<div class="visible {{precio.pk}}">
+							{%if precio.oferta%}								
+								<div class="price antiguo">
+									En Oferta! <em>S/.{{precio.precio_minorista|floatformat:2}}</em>
+								</div>
+							{%endif%}
+							<div class="price actual">S/.{{precio.en_oferta|floatformat:2}}</div>
+							<div class="stock-viability">
+								<span class="icono icon"></span>
+								En stock!
+							</div>
+						</div>
+					{%else%}
+						<div class="oculto {{precio.pk}}">
+							{%if precio.oferta%}
+								<div class="price antiguo">
+									En Oferta! <em>S/.{{precio.precio_minorista|floatformat:2}}</em>
+								</div>
+							{%endif%}
+							<div class="price actual">S/.{{precio.en_oferta|floatformat:2}}</div>
+						</div>
+					{%endif%}
+				{%endfor%}
+			</div>			
+		</div>
+		<div class="todo_producto">
+			<div class="formulario">
+				<form action="/" id="formu_addcart">
+					<fieldset>
+						<select class="form-control" name="productoID" id="productoID">
+							<option value="{{producto.pk}}">{{producto}}</option>
+							{%if producto.parientes%}
+								{%for p in producto.parientes.all%}
+									<option data-slug="{{p.slug}}" value="{{p.pk}}">{{p}}</option>
+								{%endfor%}	
+							{%endif%}
+						</select>
+						<select class="form-control" name="talla" id="talla">
+								<option value="sintalla">Seleciona una talla</option>
+							{% for p in producto.get_variacion_precio %}
+								<option data-precio="{{p.en_oferta}}" value="{{p.pk}}">{{p.talla}}</option>
+							{% endfor %}
+						</select>
+					</fieldset>
+					<p>
+						<button type="button" class="btn btn-success" id="add-cart" data-toggle="modal" data-target="#modal_minicarrito">
+							<span class="icono icon-cart"></span> Agregar a mi Bolsa
+						</button>
+					</p>
+					<p class="acciones">
+						<button type="button" class="btn btn-default">
+							<span class="icono icon-heart"></span> Favoritos
+						</button>
+						<button type="button" class="btn btn-default pull-right">
+							<span class="icono icon-bubble"></span> Compartir
+						</button>
+					</p>					
+				</form>
+			</div>
+		</div>
+		<div class="descripcion">
+				{{producto.descripcion|safe}}
+			</div>
+			<div class="relacionados productos">
+				<h3>También le gustará</h3>
+				{% for p in producto.parientes.all %}
+					<div class="producto">
+						<figure>
+							<a href="{{p.get_absolute_url}}">
+								<img src="{{p.get_imagen.foto.url}}" alt="">						
+							</a>
+						</figure>
+						<h2 class="producto-name">			
+							<a href="{{producto.get_absolute_url}}">{{producto.nombre_mostrar}}</a>
+						</h2>
+						<div class="price-box">
+							{%for precio in p.get_variacion_precio%}
+								{%if forloop.first%}
+									{%if precio.oferta%}
+										<div class="antiguo">S/.{{precio.en_oferta|floatformat:2}}</div>
+									{%endif%}
+									<div class="actual">S/.{{precio.precio_minorista|floatformat:2}}</div>
+								{%endif%}
+							{%endfor%}
+						</div>
+					</div>
+				{% endfor %}				
+			</div>
+			<div class="productoFeedback">
+				<div>
+					<h4>
+						Actualmente este producto tiene <strong>0</strong> comentarios
+					</h4>
+					<button type="button" class="btn btn-default">
+						Escribe un comentario de este producto
+					</button>
+				</div>				
+			</div>
+	</section>
+	<div class="modal fade" id="modal_minicarrito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <h4 class="modal-title" id="myModalLabel">El Articulo se agrego con exito a la bolsa</h4>
+	      <div class="modal-body">
+	      </div>
+	      <div class="acciones">
+	      	<button type="button" class="btn btn-primary  btn-sm" data-dismiss="modal">Seguir Comprando</button>
+	      	<button type="button" class="btn btn-success  btn-sm">Pagar Ahora!</button>	
+	      </div>	      
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{%endblock%}

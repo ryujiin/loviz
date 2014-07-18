@@ -1,0 +1,114 @@
+{%extends 'layout3.html'%}
+
+{%block titulo_pag%}Mi Bolsa :: Tienda Oficial LovizDC {%endblock%}
+
+{%block contenido%}
+	<section id="checkout">
+		<h2 class="tituloweb">Introduzca su información de envío y pago</h2>
+		<p>
+			Rellene los campos de abajo para completar su compra!
+		</p>
+		<div class="row">
+			<div class="col-sm-3">
+				<h3>Tu Progreseo</h3>
+				<div class="state">Autenticado</div>
+				<div class="state">Direccion</div>
+				<div class="state">Metedo de Pago</div>
+				<div class="state">Resumen de Pedido</div>				
+			</div>
+			<div class="col-sm-9">				
+				<h3>Bienvenido a la pasarela de pagos</h3>
+				<div class="panel step">
+					<div class="step-titulo activo">						
+						<h3><span class="numero">1</span>Autenticacion</h3>
+					</div>
+					<div class="step-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<h4>Procesar mi compra como Invidato o Registrarse</h4>
+								<p>Regístrese con nosotros para una futura a su conveniencia:</p>
+								<ul class="menu" class="register">
+									<li>
+										<input type="radio" name="register">
+										<label for="">Hacer el pedido como Invitado</label>
+									</li>
+									<li>
+										<input type="radio" name="register">
+										<label for="">Registrarse</label>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-6">
+								<h4>Ingresar a Mi cuenta</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel step">
+					<div class="step-titulo">						
+						<h3><span class="numero">2</span>Direccion</h3>
+					</div>
+					<div class="step-body direccion">
+						<div class="form-group">
+							<label for="">Region</label>
+							<select name="" id="">
+								<option value="">Selecciona Region</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="">Provincia</label>
+							<select name="" id="">
+								<option value="">Selecciona Region</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="">Distrito</label>
+							<select name="" id="">
+								<option value="">Selecciona Region</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="">Dirección de envío</label>
+							<input type="text">
+						</div>
+					</div>
+				</div>
+				<div class="panel step">
+					<div class="step-titulo">						
+						<h3><span class="numero">3</span>Metodo de Pago</h3>
+					</div>
+					<div class="step-body">
+						<ul class="menu">
+							<li>
+								<label for=""><input type="radio" name='metodo-pago'>
+									Tarjeta de Credito
+								</label>
+							</li>
+							<li>
+								<label for=""><input type="radio" name='metodo-pago'>
+									Paypal
+								</label>		
+							</li>
+							<li>
+								<label for=""><input type="radio" name='metodo-pago'>
+									Pago Efectivo									
+								</label>
+							</li>
+							<li>
+								<label for=""><input type="radio" name='metodo-pago'>
+									Tranferencia Bancaria
+								</label>	
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel step">
+					<div class="step-titulo">						
+						<h3><span class="numero">4</span>Resumen de Pedido</h3>
+					</div>
+					<div class="step-body"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+{%endblock%}

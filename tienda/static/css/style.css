@@ -1,0 +1,81 @@
+body{background:url("img/bg_boxed.jpg") no-repeat fixed top center;color:#666;font-size:16px;font-family:arial;}
+body a{color:#909090;}
+body a:hover{color:#f55c59;text-decoration:none}
+body img{width:100%}
+body .enlinea{display:inline-block}
+body .logo{width:235px;margin:0 auto;padding:20px 0}
+body .menu{padding:0;margin:0;}
+body .menu li{list-style:none}
+body .oculto{display:none}
+body .right{float:right}
+body table{width:100%}
+body .wrapper{background:#fff}
+#carro table.productos-bolsa{border:6px solid #f3f3f3;}
+#carro table.productos-bolsa thead tr{background-color:#f3f3f3;color:#777;font-size:.9em;}
+#carro table.productos-bolsa thead tr th{padding:10px}
+#carro table.productos-bolsa tfoot tr{background-color:#f3f3f3;text-align:right;}
+#carro table.productos-bolsa tfoot tr td{padding:5px}
+#carro table.productos-bolsa tfoot #orderTotal{background-color:#d9eefa}
+#carro table.productos-bolsa .img{width:20%}
+#contenido{padding-bottom:10px}
+#checkout .panel .step-titulo{background-color:#dedede;color:#909090;padding:5px;}
+#checkout .panel .step-titulo h3{display:inline-block;margin:0;font-size:1.3em;}
+#checkout .panel .step-titulo h3 span{width:24px;display:inline-block;margin:1px 5px;background-color:#fff;text-align:center;border-radius:20px}
+#checkout .panel .step-titulo.activo{background-color:#f55c59;}
+#checkout .panel .step-titulo.activo h3{color:#fff;}
+#checkout .panel .step-titulo.activo h3 span{color:#909090}
+header .logo strong{font-size:0;position:absolute}
+header .main-header{border-top:1px dotted #d9d9d9;}
+header .main-header .buscador-minicart{padding:30px 0 0 0;}
+header .main-header .buscador-minicart .buscador{padding:20px;margin-left:60px;}
+header .main-header .buscador-minicart .buscador .content-buscador{background-color:#ededed;border-radius:5px;}
+header .main-header .buscador-minicart .buscador .content-buscador input{border:none;background:transparent;margin:5px;width:300px;}
+header .main-header .buscador-minicart .buscador .content-buscador input:focus{outline:none}
+header .main-header .buscador-minicart .buscador .content-buscador .glyphicon{background:#f55c59;color:#fff;border-radius:5px;padding:8px}
+header .main-header .buscador-minicart .minicart{padding:0 50px;margin:20px;position:relative;}
+header .main-header .buscador-minicart .minicart .icono-cart{width:50px;height:50px;position:absolute;left:0;}
+header .main-header .buscador-minicart .minicart .icono-cart .glyphicon{font-size:40px;color:#999}
+header .main-header .buscador-minicart .minicart .icono-cart .cantidad{position:absolute;bottom:0;left:18px;display:block;width:30px;line-height:25px;text-align:center;background-color:#f55c59;color:#fff;font-weight:bold;border-radius:20px;border:2px solid #fff}
+header .main-header .buscador-minicart .minicart .body-cart .title-cart h2{font-size:.9em;margin:6px}
+header .main-header .buscador-minicart .minicart .body-cart .detail-cart{font-size:.8em}
+header .top-link{border-bottom:1px dotted #d9d9d9;margin-bottom:1px;padding-top:10px;padding-bottom:10px;}
+header .top-link li{margin:0 10px}
+header .top-link p{margin:0}
+nav#main-menu{padding:0 0 15px 0;}
+nav#main-menu .content-menu{background-color:#000;box-shadow:0 5px 7px}
+nav#main-menu .menu-login{background-color:#f55c59;position:relative;}
+nav#main-menu .menu-login a{color:#fff}
+nav#main-menu .menu-login:after{content:'';display:block;position:absolute;background-color:#f55c59;width:192px;height:8px;top:-8px}
+nav#main-menu .menu-login:before{content:'';display:block;position:absolute;height:19px;width:20px;top:-19px;left:-10px;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:8px solid #8a0808}
+nav#main-menu .menu li{display:inline-block;}
+nav#main-menu .menu li a{padding:20px 17px;display:block}
+.producto .image-box{position:relative;}
+.producto .image-box .new-producto{position:absolute;top:0;display:block;width:60px;background:#ff8000;line-height:50px;border-radius:30px;padding:5px;color:#fff;font-weight:bold}
+.producto .producto-info{text-align:center;}
+.producto .producto-info .product-title a{color:#666}
+.producto .producto-info .product-review{font-size:.8em;}
+.producto .producto-info .product-review .estrellitas{display:inline-block;}
+.producto .producto-info .product-review .estrellitas .glyphicon{color:#ffbf00}
+.producto .producto-info .price-box .price{color:#f55c59;font-size:1.5em;margin:0 10px}
+.producto .producto-info .price-box .old-price{text-decoration:line-through}
+#newsletter{background-color:#efefef;padding:30px 50px 30px 44px;}
+#newsletter .titulo-newsletter h2{font-size:1.4em;margin:0}
+#newsletter p{font-size:.8em}
+footer{background:url("img/bg-big-footer.png") no-repeat top center #1b1b1b}
+h2,nav#main-menu .menu li a{text-transform:uppercase;font-weight:500}
+.body-cart .title-cart,nav#main-menu .menu li a,h2,h3,h4,.producto .product-title a,.producto .price-box{font-family:'Roboto Condensed',sans-serif}
+#producto .colores{text-align:center;}
+#producto .colores .varia_color{width:100px;display:inline-block}
+#producto .formu{background-color:#fff;text-align:center;padding-top:50px;right:-20px;top:50px;border:1px solid #ddd;box-shadow:1px 1px 10px;}
+#producto .formu .price-box .antiguo{color:#777;}
+#producto .formu .price-box .antiguo em{text-decoration:line-through}
+#producto .formu .price-box .actual{font-family:'Georgia',serif;color:#8a9c10;font-weight:bold;font-size:2.2em}
+#producto .formu .price-box .stock-viability{color:#8a9c10}
+#producto .formu .formulario-producto select{margin:10px auto}
+#producto .titulo-producto{font-size:1.5em;text-align:center}
+#producto .info-producto .descrpcion{font-size:.8em;}
+#producto .info-producto .descrpcion h3{color:#76860a;font:italic 20px 'Georgia',serif;margin-bottom:20px}
+#producto .info-producto .descrpcion li{list-style:square}
+#producto h3.subtitulo{display:inline-block;margin:0 0 0 -15px;background:#2c5987;line-height:35px;color:#fff;padding:0 5px;font-size:1.2em;position:relative}
+#producto .relacionados h3{font-family:Georgia,serif;font-size:1em;font-style:italic}
+#producto .thumns{padding:50px 10px}

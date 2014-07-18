@@ -1,0 +1,208 @@
+{%extends 'layout3.html'%}
+
+{%block titulo_pag%}{{producto.nombre_mostrar}} :: Tienda Oficial LovizDC {%endblock%}
+
+{%block contenido%}
+	<div class="" id="producto">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="thumns">
+							{% for img in  producto.get_imagenes%}	
+								<img src="{{img.foto.url}}" alt="">				
+							{% endfor %}
+						</div>
+					</div>
+					<div class="col-sm-10">
+						<h2 class="titulo-producto">
+							{{producto.nombre}}
+						</h2>
+						<div class="galeria">
+							{% for img in  producto.get_imagenes%}
+								{% if forloop.first %}
+									<img src="{{img.foto.url}}" alt="">				
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="colores">
+							<figure class="varia_color">
+								<img src="{{producto.get_imagen.foto.url}}" alt="">
+							</figure>
+							{%for p in producto.parientes.all%}
+								<figure class="varia_color">
+									<a href="{{p.get_absolute_url}}">
+										<img src="{{p.get_imagen.foto.url}}" alt="">						
+									</a>
+								</figure>
+							{%endfor%}
+						</div>
+					</div>	
+				</div>				
+			</div>
+			<div class="col-sm-3 formu">
+				<div class="price-box">
+					{%for precio in producto.get_variacion_precio%}
+						{%if forloop.first%}
+							<div class="visible {{precio.pk}}">
+								{%if precio.oferta%}								
+									<div class="price antiguo">
+										En Oferta! <em>S/.{{precio.precio_minorista|floatformat:2}}</em>
+									</div>
+								{%endif%}
+								<div class="price actual">S/.{{precio.en_oferta|floatformat:2}}</div>
+								<div class="stock-viability">
+									<span class="icono icon"></span>
+									En stock!
+								</div>
+							</div>
+						{%else%}
+							<div class="oculto {{precio.pk}}">
+								{%if precio.oferta%}
+									<div class="price antiguo">
+										En Oferta! <em>S/.{{precio.precio_minorista|floatformat:2}}</em>
+									</div>
+								{%endif%}
+								<div class="price actual">S/.{{precio.en_oferta|floatformat:2}}</div>
+							</div>
+						{%endif%}
+					{%endfor%}
+				</div>
+				<div class="envio"></div>	
+				<div class="formulario-producto">
+					<form action="/" id="formu_addcart">
+						<fieldset>
+							<select class="form-control" name="productoID" id="productoID">
+								<option value="{{producto.pk}}">{{producto}}</option>
+								{%if producto.parientes%}
+									{%for p in producto.parientes.all%}
+										<option data-slug="{{p.slug}}" value="{{p.pk}}">{{p}}</option>
+									{%endfor%}	
+								{%endif%}
+							</select>
+							<select class="form-control" name="talla" id="talla">
+									<option value="sintalla">Seleciona una talla</option>
+								{% for p in producto.get_variacion_precio %}
+									<option data-precio="{{p.en_oferta}}" value="{{p.pk}}">{{p.talla}}</option>
+								{% endfor %}
+							</select>
+						</fieldset>
+						<p>
+							<button type="button" class="btn btn-success" id="add-cart" data-toggle="modal" data-target="#modal_minicarrito">
+								<span class="icono icon-cart"></span> Agregar a mi Bolsa
+							</button>
+						</p>
+						<p class="acciones">
+							<button type="button" class="btn btn-default favorito">
+								<span class="glyphicon glyphicon-heart"></span> Favoritos
+							</button>
+							<button type="button" class="btn btn-default pull-right">
+								<span class="glyphicon glyphicon-share-alt"></span> Compartir
+							</button>
+						</p>					
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="info-producto">
+					<h3 class="subtitulo">Informacion del Producto</h3>
+					<div class="descrpcion">
+						{{producto.descripcion|safe}}						
+					</div>
+				</div>
+				<div class="relacionados">
+					<h3>También le gustará</h3>
+					<div class="row productos">
+						{% for p in producto.parientes.all %}
+						<div class="col-sm-3">
+							<article class="producto">
+								<div class="image-box">
+									<figure class="image">
+										<a href="{{p.get_absolute_url}}"></a>
+										<img src="{{p.get_imagen.foto.url}}" alt="">
+									</figure>
+								</div>
+								<div class="producto-info">
+									<div class="product-title">
+										<a href="{{producto.get_absolute_url}}">{{producto.nombre_mostrar}}</a>
+									</div>
+									<div class="price-box">
+										{%for precio in p.get_variacion_precio%}
+											{%if forloop.first%}
+												<span class="price">
+													S/.{{precio.en_oferta|floatformat:2}}
+												</span>	
+												{%if precio.oferta%}
+												{%endif%}
+												<span class="old-price">S/.
+													{{precio.en_oferta|floatformat:2}}
+												</span>
+											{%endif%}
+										{%endfor%}
+									</div>
+								</div>
+							</article>
+						</div>
+						{% endfor %}
+					</div>						
+				</div>
+				<div class="producto-comentarios">
+					<h3 class="subtitulo">Opiniones de Clientes</h3>
+					<div class="formu-coment">
+						<ol>
+							<li>
+								<legend>
+									¿Cómo te sientes acerca de este artículo?
+								</legend>
+							</li>
+							<li>
+								<legend>
+									Háganos saber lo que piensas
+								</legend>
+							</li>
+							<li></li>
+						</ol>
+						<button>Enviar Comentario</button>
+					</div>
+					<div class="comentarios">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="relacionados">
+					<h3>Los clientes que compraron este artículo también compraron</h3>
+					{% for p in producto.parientes.all %}
+							<article class="producto">
+								<div class="image-box">
+									<figure class="image">
+										<a href="{{p.get_absolute_url}}"></a>
+										<img src="{{p.get_imagen.foto.url}}" alt="">
+									</figure>
+								</div>
+								<div class="producto-info">
+									<div class="product-title">
+										<a href="{{producto.get_absolute_url}}">{{producto.nombre_mostrar}}</a>
+									</div>
+									<div class="price-box">
+										{%for precio in p.get_variacion_precio%}
+											{%if forloop.first%}
+												<span class="price">
+													S/.{{precio.en_oferta|floatformat:2}}
+												</span>	
+												{%if precio.oferta%}
+												{%endif%}
+												<span class="old-price">S/.
+													{{precio.en_oferta|floatformat:2}}
+												</span>
+											{%endif%}
+										{%endfor%}
+									</div>
+								</div>
+							</article>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

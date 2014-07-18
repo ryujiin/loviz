@@ -1,0 +1,12 @@
+<nav class="breadcrumbs">
+				<ul class="menu">
+					<li><a href="/">Inicio</a><span>/</span></li>
+					{%if categoria.padre %}
+					<li>
+						<a href="{{categoria.padre.get_absolute_url}}">{{categoria.padre.nombre}}</a>
+						<span>/</span>
+					</li>
+					{%endif%}
+					<li>{{categoria.nombre}}</li>
+				</ul>
+			</nav>
