@@ -52,6 +52,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# ignorar imagenes
-lovizdc/public/
-lovizdc/local_settings.py
+#ignorar carpeta
+lovizdc/
