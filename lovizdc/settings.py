@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'stripe',
     'billing',
+    'gunicorn',
     #mis app
     'carro',
     'catalogo',
