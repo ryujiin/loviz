@@ -21,9 +21,9 @@ location = lambda x: os.path.join(
 SECRET_KEY = '5s*+3)im)6&i67==vpm*a1sq_hbh%&hmw=q+ybjpq$&4$h#gsu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -71,14 +71,14 @@ WSGI_APPLICATION = 'lovizdc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'lovizdb',
+        'USER': 'kikedb',
+        'PASSWORD': 'C4b4ll0s',
     }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -145,3 +145,7 @@ MERCHANT_SETTINGS = {
         "PUBLISHABLE_KEY": "pk_test_1dnWop5afJiTtiGPo2GsJsa4", # Used for stripe integration
     }
 }
+try:
+   from local_settings import *
+except ImportError, e:
+   pass
